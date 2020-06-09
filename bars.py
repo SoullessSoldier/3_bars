@@ -79,14 +79,33 @@ def get_closest_bar(data, latitude, longitude):
 if __name__ == '__main__':
     file = '1796.json'
     data = load_data(file)
-    print(f"Самый большой бар {get_biggest_bar(data)[0]} по адресу "
-          f"{get_biggest_bar(data)[1]} имеет {get_biggest_bar(data)[2]} мест")
-    print(f"Самый маленький бар {get_smallest_bar(data)[0]} по адресу "
-          f"{get_smallest_bar(data)[1]} имеет {get_smallest_bar(data)[2]} мест")
+    print(
+        "Самый большой бар {bar_name} по адресу "
+        "{bar_address} имеет {bar_seatscount} мест"
+        .format(
+            bar_name=get_biggest_bar(data)[0],
+            bar_address=get_biggest_bar(data)[1],
+            bar_seatscount=get_biggest_bar(data)[2])
+    )
+    print(
+        "Самый маленький бар {bar_name} по адресу "
+        "{bar_address} имеет {bar_seatscount} мест"
+        .format(
+            bar_name=get_smallest_bar(data)[0],
+            bar_address=get_smallest_bar(data)[1],
+            bar_seatscount=get_smallest_bar(data)[2]
+        )
+    )
     # test_coords=[55.754109,37.620490]#широта, долгота точки на Красной площади
     user_latitude = input("Введите широту (latitude) вашей точки в градусах, например 55.754109: ")
     user_longitude = input("Введите долготу (longitude) вашей точки в градусах, например 37.620490: ")
     test_coords = list(map(float, [user_latitude, user_longitude]))
-    print(f"Ближайший бар {get_closest_bar(data, test_coords[0], test_coords[1])[0]} находится по адресу "
-          f"{get_closest_bar(data, test_coords[0], test_coords[1])[1]} в "
-          f"{get_closest_bar(data, test_coords[0], test_coords[1])[2]} метрах от вас.")
+    print(
+        "Ближайший бар {bar_name} находится по адресу "
+        "{bar_address} в {bar_faraway} метрах от вас."
+        .format(
+            bar_name=get_closest_bar(data, test_coords[0], test_coords[1])[0],
+            bar_address=get_closest_bar(data, test_coords[0], test_coords[1])[1],
+            bar_faraway=get_closest_bar(data, test_coords[0], test_coords[1])[2]
+        )
+    )
