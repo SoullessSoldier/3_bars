@@ -49,9 +49,9 @@ def get_biggest_bar(data):
 
 def get_smallest_bar(data):
     arr = []
-    bar_name = ''
-    bar_address = ''
-    bar_seatscount = 0
+    bar_name: str = ''
+    bar_address: str = ''
+    bar_seatscount: int = 0
     for i in data['features']:
         bar_name = i['properties']['Attributes']['Name']
         bar_address = i['properties']['Attributes']['Address']
