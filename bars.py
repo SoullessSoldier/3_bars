@@ -36,9 +36,9 @@ def load_data(filepath):
 
 def get_biggest_bar(data):
     arr = []
-    bar_name: str = ''
-    bar_address: str = ''
-    bar_seatscount: int = 0
+    bar_name = ''
+    bar_address = ''
+    bar_seatscount = 0
     for i in data['features']:
         bar_name = i['properties']['Attributes']['Name']
         bar_address = i['properties']['Attributes']['Address']
@@ -49,9 +49,9 @@ def get_biggest_bar(data):
 
 def get_smallest_bar(data):
     arr = []
-    bar_name: str = ''
-    bar_address: str = ''
-    bar_seatscount: int = 0
+    bar_name = ''
+    bar_address = ''
+    bar_seatscount = 0
     for i in data['features']:
         bar_name = i['properties']['Attributes']['Name']
         bar_address = i['properties']['Attributes']['Address']
@@ -63,9 +63,9 @@ def get_smallest_bar(data):
 def get_closest_bar(data, latitude, longitude):
     # в jsone перепутаны местами координаты по сравнению с гуглом
     arr = []
-    bar_long: float = 0.0
-    bar_lat: float = 0.0
-    far_from_user: float = 0.0
+    bar_long = 0.0
+    bar_lat = 0.0
+    far_from_user = 0.0
     for i in data['features']:
         bar_name = i['properties']['Attributes']['Name']
         bar_address = i['properties']['Attributes']['Address']
